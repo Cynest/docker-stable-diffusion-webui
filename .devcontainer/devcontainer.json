@@ -1,0 +1,36 @@
+{
+    "name": "Docker outside of Docker",
+    "workspaceMount": "",
+    "runArgs": ["--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z"],
+    "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			"version": "latest",
+			"enableNonRootDocker": "true",
+			"moby": "true"
+		}
+	},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+				"streetsidesoftware.code-spell-checker"
+			],
+            "settings": {
+                "cSpell.words": [
+                    "Containerfile",
+                    "datadir",
+                    "devcontainers",
+                    "dockercompose",
+                    "gradio",
+                    "moby",
+                    "universonic",
+                    "webui"
+                ],
+                "files.associations": {
+                    "*.yml": "dockercompose",
+                    "*.yaml": "dockercompose"
+                }
+            }
+        }
+    }
+}
